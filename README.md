@@ -1,31 +1,11 @@
+![Ferdinandsbrücke](Ferdinandsbrücke.png)
+
 # Project 4
 
-The Museum of Modern Art published a dataset containing more than 130k artworks from its catalog, joining the UK’s Tate, the Smithsonian’s Cooper Hewitt, and other forward-thinking museums. The MoMA data contains the names of the artwork and artist, the dates created and acquired, and the medium — but no images. This data file can be found in its raw form at the  [Museum of Modern Art github page](https://github.com/MuseumofModernArt/collection) and is revised frequently. However, you should NOT use this file - instead, use the simplified file that has been uploaded to Blackboard.
-
-<!-- MarkdownTOC -->
-
-- The Data
-- The Goal
-- Teams
-- Step 1 - Import and Clone the Repo.
-- Step 2 - Download the Data
-- Step 3 - Have a Plan
-- Step 4 - Write the code for Class\(es\) to store the data for each Artist and Artwork
-- Step 5 - Write code to Parse the Data File
-- Step 6 - Write the code to count frequency of the tokens in each Artwork
-- Step 7 - Write the code to count the tokens for each Artist
-- Step 8 - Write the code to compare Artists.
-- Step 9 - Write the code to print the results.
-- Step 10 - Push to Github
-- Grading
-- Extra Credit
-- Other data sets
-
-<!-- /MarkdownTOC -->
-
+The Museum of Modern Art published a dataset containing more than 130k artworks from its catalog, joining the UK’s Tate, the Smithsonian’s Cooper Hewitt, and other forward-thinking museums. The MoMA data contains the names of the artwork and artist, the dates created and acquired, and the medium — but no images. This data file can be found in its raw form at the  [Museum of Modern Art github page](https://github.com/MuseumofModernArt/collection) and is revised frequently. However, you should NOT use this file - instead, use the simplified file that has been uploaded to Blackboard. The data file does contain URLs to each of the works, which you should feel free to make use of as you explore.
 
 ## The Data
-You are being provided with a link to a data set of 138124 artwork descriptions collected from the MoMa dataset for all artwork in the museum collection. This is a comma-separated value file (.csv) in which all records are surrounded by quotation marks. You can open up the file in any text editor (e.g., Sublime) or even Excel if you want to look at the data directly (and you should always inspect your data!).
+You are being provided with a data set of 138124 artwork descriptions collected from the MoMa dataset for all artwork in the museum collection. This is a comma-separated value file (.csv) in which all records are surrounded by quotation marks. You can open up the file in any text editor (e.g., Sublime) or even Excel if you want to look at the data directly (and you should always inspect your data!).
 
 ## The Goal
 For this project you will be designing an application containing one main class: `ArtistAnalyzer` and a few supporting classes. The exact contents of these classes are largely up to you, though there is functionality that is required. Some guidelines are given below for how to structure your code, but a major component of this assignment is to design classes and methods that achieve the desired results. At minimum, it is required that your application should start when the ArtistAnalyzer class is launched. It should take one or more command line arguments, and depending on what is passed in the command line, it should output an analysis of the file.
@@ -115,7 +95,7 @@ There are two extra credit opportunities for this assignment that were described
 1. **+20%** Replace the similarity method with a calculation based on term-frequency-inverse-document-frequency [(tf-idf)](https://en.wikipedia.org/wiki/Tf%E2%80%93idf). This is recommended for students who are more interested in digging into algorithms, data science, and machine learning.
 1. **+20%** Instead of calling the functions from the command line, implement the UI described in class with JavaFX. This is recommended for students who are more interested in GUI design, human-computer interaction, and data visualization.
 
-## Other data sets
+# Other data sets
 If this kind of thing interests you, here is some additional reading material and data sets to explore:
 - https://github.com/MuseumofModernArt/collection
 - https://github.com/tategallery/collection
