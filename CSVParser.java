@@ -1,22 +1,46 @@
 import java.io.File;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Scanner;
 
 
+/**
+ * parseLine() taken from https://www.mkyong.com/java/how-to-read-and-parse-csv-file-in-java/
+ */
 public class CSVParser {
 
-  private static final String FILE_PATH = "/Users/thzhang/Workspace/Project-4/Artworks_new.csv";
+  private static final String FILE_PATH = "Artworks_new.csv";
   private static final char DEFAULT_SEPARATOR = ',';
   private static final char DEFAULT_QUOTE = '"';
 
-  public static void parse() throws Exception {
+  /**
+   * Parses Artworks_new.csv into a map of artist name -> artist.
+   *
+   * @return a map of artist name -> artist
+   * @throws Exception
+   */
+  public static Map<String, Artist> parse() throws Exception {
+    // artist name -> artist mapping which contains the parse output
+    Map<String, Artist> output = new HashMap<>();
+
+    // parse the file
     Scanner scanner = new Scanner(new File(FILE_PATH));
     while (scanner.hasNext()) {
       List<String> line = parseLine(scanner.nextLine());
-      
+      String artworkTitle = line.get(0);
+      String artistName = line.get(1);
+      if (output.containsKey(artistName)) {
+        // artist already exists, add this artwork to this artist
+        output.get(artistName).addArtwork(artworkTitle);
+      } else {
+        // artist does not exist, create new artist with this artwork
+        output.put(artistName, new Artist(artistName, artworkTitle));
+      }
     }
     scanner.close();
+    return output;
   }
 
   private static List<String> parseLine(String cvsLine) {
