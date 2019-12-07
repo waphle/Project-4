@@ -1,7 +1,7 @@
 import java.util.Scanner;
 import java.util.ArrayList;
 
-public class ATRepos {
+public class ATRepos { // Artist and Title initials form AT
    // Atrributes
    ArrayList<AT> atRops = new ArrayList<AT>();
    
@@ -9,10 +9,10 @@ public class ATRepos {
    public ATRepos() {};
    
    // Getters and setters
-   public ArrayList<AD> getADRepos() { return adRops; }
+   public ArrayList<AT> getATRepos() { return atRops; }
    
    // Methods
-   public boolean loadADs(String fileName) throws Exception {
+   public boolean loadATs(String fileName) throws Exception {
    
       if (fileName.isEmpty()) {
          System.out.println("Input file name is empty.");
@@ -33,18 +33,18 @@ public class ATRepos {
             continue;
          }
          
-         AD ad = new AD();
+         AT ad = new AT();
             
-         // Read each of a piece of ad and put its fields into an AD object
+         // Read each of a piece of ad and put its fields into an AT object
          // Get id
          int startPos = 0;
-         int delimPos = line.indexOf(Constants.AD_FIELD_DELIMITER, startPos);
+         int delimPos = line.indexOf(Constants.AT_FIELD_DELIMITER, startPos);
          int id = Integer.parseInt(line.substring(0, delimPos));
          ad.setID(id);
          startPos = delimPos + 1;
          
          // Get state code
-         delimPos = line.indexOf(Constants.AD_FIELD_DELIMITER, startPos);
+         delimPos = line.indexOf(Constants.AT_FIELD_DELIMITER, startPos);
          String stateCode = line.substring(startPos, delimPos);
          ad.setStateCode(stateCode);
          startPos = delimPos + 1;
