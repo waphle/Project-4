@@ -123,7 +123,9 @@ public class ArtistAnalyzer {
       }
     }
 
-    System.out.println("There are " + wordsInBoth.size() + " tokens that are shared between them.");
+    System.out.println(
+        "There are " + wordsInBoth.size() + " tokens that are shared between " + a1.getName() + " and " + a2.getName()
+            + ".");
     for (String word : wordsInBoth) {
       System.out.println(word);
     }
