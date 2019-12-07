@@ -31,6 +31,10 @@ public class CSVParser {
       List<String> line = parseLine(scanner.nextLine());
       String artworkTitle = line.get(0);
       String artistName = line.get(1);
+      if (artistName.isEmpty()) {
+        // skip artworks with no artist
+        continue;
+      }
       if (output.containsKey(artistName)) {
         // artist already exists, add this artwork to this artist
         output.get(artistName).addArtwork(artworkTitle);
@@ -39,6 +43,12 @@ public class CSVParser {
         output.put(artistName, new Artist(artistName, artworkTitle));
       }
     }
+
+    // summarize token counts for each artist
+    for (Artist artist : output.values()) {
+      artist.summarize();
+    }
+
     scanner.close();
     return output;
   }

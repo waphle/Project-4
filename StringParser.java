@@ -23,7 +23,8 @@ public class StringParser {
   }
 
   public static void main(String[] args) {
-    Map<String, Integer> result = StringParser.parse("Catalytic text: 20 January 2017. First line: “The problem is ours.” An ad in The New York Times, 7 September 2018, on page A5.");
+    Map<String, Integer> result = StringParser.parse(
+        "Catalytic text: 20 January 2017. First line: “The problem is ours.” An ad in The New York Times, 7 September 2018, on page A5.");
     System.out.println(result);
   }
 }
