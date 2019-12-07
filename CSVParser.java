@@ -115,6 +115,13 @@ public class CSVParser {
   }
 
   public static void main(String[] args) throws Exception {
-    parse();
+    Map<String, Artist> artists = parse();
+    for (Artist artist : artists.values()) {
+      System.out.println(artist.getName() + ":");
+      for (Artwork artwork : artist.getArtworks()) {
+        System.out.println(artwork.getTitle());
+      }
+      System.out.println();
+    }
   }
 }
